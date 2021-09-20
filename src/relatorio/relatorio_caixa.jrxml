@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_caixa" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="272df2e3-c0b6-4640-94ea-388e74a2eae7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<queryString language="EJBQL">
+		<![CDATA[SELECT c FROM Caixa c WHERE c.dataCaixa = CURRENT_DATE AND c.status = modelo.CaixaStatus.ABERTO]]>
+	</queryString>
+	<field name="compra" class="modelo.Compra">
+		<fieldDescription><![CDATA[compra]]></fieldDescription>
+	</field>
+	<field name="saldo_abertura" class="java.lang.Float">
+		<fieldDescription><![CDATA[saldo_abertura]]></fieldDescription>
+	</field>
+	<field name="venda" class="modelo.Venda">
+		<fieldDescription><![CDATA[venda]]></fieldDescription>
+	</field>
+	<field name="saldo_fechamento" class="java.lang.Float">
+		<fieldDescription><![CDATA[saldo_fechamento]]></fieldDescription>
+	</field>
+	<field name="dataCaixa" class="java.util.Date">
+		<fieldDescription><![CDATA[dataCaixa]]></fieldDescription>
+	</field>
+	<field name="status" class="modelo.CaixaStatus">
+		<fieldDescription><![CDATA[status]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="f8fc97ef-b798-4309-915f-9ae686fc781a"/>
+				<box>
+					<pen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatorio do Caixa]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="10" width="120" height="20" uuid="1cd657e1-5f10-4064-b74b-3fb5824e8d13">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8194aee9-183a-4f78-a7b1-0c43889c2b26"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saldo de Abertura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="110" height="20" uuid="8d8ea190-8c3e-4b08-9826-6e916bca32a8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06f33cb5-9adc-4b5b-8b5e-6c44498b6633"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data do Caixa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="10" width="130" height="20" uuid="f3864f16-5dfb-4d22-b3d6-48d62f66b04a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="43f1318b-1a17-4dc1-a1a5-a0f4a29c6883"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saldo de Fechamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="10" width="90" height="20" uuid="262b4e2d-f6ab-4b12-b7be-7e2bf9d101b6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64fe0a8b-cdfa-4bde-8a3e-1238ab2fd7f2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Venda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="10" width="70" height="20" uuid="52bd5f21-1d56-45a8-81dc-23452289a24c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bbf40479-3bda-42a6-a94e-4034bb9322b4"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Compra]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="72" splitType="Stretch">
+			<textField>
+				<reportElement x="120" y="10" width="100" height="21" uuid="1783a3e4-294e-48c6-8fcc-e1f7ced56d56">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8194aee9-183a-4f78-a7b1-0c43889c2b26"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{saldo_abertura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="10" width="100" height="20" uuid="0c2591ee-d61d-4416-a360-920f57a329d9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06f33cb5-9adc-4b5b-8b5e-6c44498b6633"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dataCaixa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="10" width="130" height="20" uuid="69add0d3-3528-4edf-b376-d49d020015e0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="43f1318b-1a17-4dc1-a1a5-a0f4a29c6883"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{saldo_fechamento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="370" y="10" width="80" height="20" uuid="be56db31-66f3-4189-8fb9-a5f5f67e805f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64fe0a8b-cdfa-4bde-8a3e-1238ab2fd7f2"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{venda}.getIdVenda()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="460" y="10" width="70" height="20" uuid="a47799a4-b3ba-4766-9c9b-bd1ead670912">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bbf40479-3bda-42a6-a94e-4034bb9322b4"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{compra}.getIdCompra()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="370" y="50" width="80" height="20" uuid="e7c2a270-32d1-4ef4-b8a1-311e1125398b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9292e59f-fece-42ce-b126-ab00b3f414e4"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{venda}.getValortotal()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="34" width="80" height="10" uuid="73e81225-4a39-4383-b0a1-cae90f6c7fce">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9292e59f-fece-42ce-b126-ab00b3f414e4"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor da Venda]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="460" y="49" width="92" height="21" uuid="ab4342b8-fabd-4fec-8e10-6209ae91e20c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="12c66473-d69f-4d66-b804-6b760417cd99"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{compra}.getValortotal()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="460" y="30" width="100" height="18" uuid="5e0a5012-d7d6-40a4-ac03-032f69d84a07">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="12c66473-d69f-4d66-b804-6b760417cd99"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor da compra]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="70" width="552" height="2" uuid="955db9b6-5148-4399-9fb8-aefaae2bad6a"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="100" height="20" uuid="9e0cfb18-ce31-4e55-8cf4-cafaedf6a0f7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="0" width="30" height="20" uuid="d55b9843-01f7-45e4-9159-01c528d0fc23"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
